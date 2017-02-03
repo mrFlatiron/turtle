@@ -12,17 +12,17 @@ TARGET = Ver4
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
-    connector.cpp \
-    errorwindow.cpp \
-    encoder.cpp
+SOURCES += src/main.cpp\
+        src/mainwindow.cpp \
+    src/connector.cpp \
+    src/errorwindow.cpp \
+    src/encoder.cpp
 
-HEADERS  += mainwindow.h \
-    connector.h \
-    errorwindow.h \
-    const.h \
-    encoder.h
+HEADERS  += include/mainwindow.h \
+    include/connector.h \
+    include/errorwindow.h \
+    include/const.h \
+    include/encoder.h
 
-FORMS    += mainwindow.ui \
-    errorwindow.ui
+FORMS    += ui/mainwindow.ui \
+    ui/errorwindow.ui
