@@ -17,7 +17,7 @@ signals:
 
 public slots:
         void onError(QAbstractSocket::SocketError error);
-        void onError(int error);
+        void onError(QString *errorMsg);
 
 public:
     explicit ErrorWindow(QWidget *parent = 0);

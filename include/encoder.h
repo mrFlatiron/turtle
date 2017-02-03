@@ -9,7 +9,7 @@ class Encoder
 {
 public:
     Encoder();
-    int encode(const QString &msg, char *data, const int dataSize);
+    int encode(const QString &msg, char *data, const int dataSize, QString& errorMsg);
     int decode(QString &msg, const char *data);
 };
 

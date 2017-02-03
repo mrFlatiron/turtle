@@ -21,11 +21,12 @@ private:
     QString ip;
     int service;
     char buf[MAX_MESSAGE_LENGTH];
+    bool errorEmited;
 
 signals:
     void incomingMessage(QString *msg);
     void error(QAbstractSocket::SocketError);
-    void error(int);
+    void error(QString* errorMsg);
     void connectionEstablished();
 
 public slots:

@@ -28,6 +28,7 @@ private slots:
     void connectToServer();
     void sendMessage();
     void onError(QAbstractSocket::SocketError);
+    void onError(QString *errorMsg);
 
 private:
     Ui::MainWindow *ui;

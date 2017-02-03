@@ -1,7 +1,7 @@
-#include "mainwindow.h"
-#include "connector.h"
-#include "errorwindow.h"
-#include "const.h"
+#include "include/mainwindow.h"
+#include "include/connector.h"
+#include "include/errorwindow.h"
+#include "include/const.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -9,37 +9,38 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWindowTitle("Turtle Chat");
     ui->connectButton->setDefault(true);
     ui->chatOutput->setDisabled(true);
     ui->sendButton->setDisabled(true);
     connect(&connector, SIGNAL(incomingMessage(QString*)), this, SLOT(recvMessage(QString*)));
     connect(&connector, SIGNAL(connectionEstablished()), this, SLOT(startChat()));
     connect(&connector, SIGNAL(error(QAbstractSocket::SocketError)), &eWindow, SLOT(onError(QAbstractSocket::SocketError)));
-    connect(&connector, SIGNAL(error(int)), &eWindow, SLOT(onError(int)));
+    connect(&connector, SIGNAL(error(QString*)), &eWindow, SLOT(onError(QString*)));
     connect(&eWindow, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(onError(QAbstractSocket::SocketError)));
+    connect(ui->messageBox, SIGNAL(returnPressed()), this, SLOT(sendMessage()));
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+  delete ui;
 }
 
 void MainWindow::connectToServer()
 {
-    QString ip;
-    ip = ui->connectEdit->text();
-    connector.setIp(ip);
+  QString ip;
+  ip = ui->connectEdit->text();
+  connector.setIp(ip);
 
-    int res = connector.connectToServer (ui->nickEdit->text());
-    if (res > 0)
-    {
-        ui->connectButton->setDisabled(true);
-    }
+  connector.connectToServer (ui->nickEdit->text());
+
+  ui->connectButton->setDisabled(true);
+
 }
 
 void MainWindow::startChat()
 {
-    ui->nickEdit->setDisabled(true);
+  ui->nickEdit->setDisabled(true);
     ui->connectButton->setDisabled(true);
     ui->connectEdit->setText("Connected!");
     ui->connectEdit->setDisabled(true);
@@ -50,7 +51,7 @@ void MainWindow::startChat()
 
 void MainWindow::sendMessage()
 {
-    connector.sendMessage(ui->messageBox->toPlainText());
+    connector.sendMessage(ui->messageBox->text());
     ui->messageBox->clear();
 }
 
@@ -65,6 +66,11 @@ void MainWindow::onError(QAbstractSocket::SocketError error_)
   toInitState();
 }
 
+void MainWindow::onError(QString *errorMsg)
+{
+  toInitState();
+}
+
 void MainWindow::toInitState()
 {
     ui->nickEdit->setEnabled(true);
@@ -74,4 +80,5 @@ void MainWindow::toInitState()
     ui->chatOutput->setDisabled(true);
     ui->sendButton->setDisabled(true);
     ui->messageBox->setDisabled(true);
+    connector.errorEmited = false;
 }

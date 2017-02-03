@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>705</width>
-    <height>375</height>
+    <width>691</width>
+    <height>430</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -77,22 +77,18 @@
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>90</height>
+          <height>700</height>
          </size>
         </property>
        </widget>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
         <item>
-         <widget class="QPlainTextEdit" name="messageBox">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>91</height>
-           </size>
-          </property>
-         </widget>
+         <widget class="QLineEdit" name="messageBox"/>
         </item>
         <item>
          <widget class="QPushButton" name="sendButton">
@@ -118,7 +114,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>705</width>
+     <width>691</width>
      <height>26</height>
     </rect>
    </property>

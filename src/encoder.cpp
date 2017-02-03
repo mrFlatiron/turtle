@@ -1,15 +1,18 @@
-#include "encoder.h"
+#include "include/encoder.h"
 
 Encoder::Encoder()
 {
 
 }
-int Encoder::encode(const QString &msg, char *data, const int dataSize)
+int Encoder::encode(const QString &msg, char *data, const int dataSize, QString& errorMsg)
 {
     const char *tempData = msg.toUtf8().constData();
     short length = strlen(tempData);
     if (dataSize < length + 3)
+      {
+        errorMsg = QString("The message is too long");
         return BUFFER_TOO_SMALL;
+      }
     memset(data, 0, dataSize);
     data[0] = ((char *)(&length))[0];
     data[1] = ((char *)(&length))[1];
@@ -21,10 +24,18 @@ int Encoder::encode(const QString &msg, char *data, const int dataSize)
 }
 int Encoder::decode(QString &msg, const char *data)
 {
-    const short length = *(short *)(data);
-    if (length < 0 || length > MAX_MESSAGE_LENGTH)
+    short length = *(short *)(data);
+    int is_error = 0;
+    is_error =  (length <= 0) ? 1 : 0;
+    length = abs(length);
+
+    if (length == 0 || length > MAX_MESSAGE_LENGTH)
+      {
+        msg = "Invalid message recieved. Somebody have ruined the server!";
         return BAD_FORMAT;
+      }
+
     data = data + 2;
     msg = msg.fromUtf8(data, length);
-    return 0;
+    return is_error;
 }
