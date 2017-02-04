@@ -26,7 +26,7 @@ void ErrorWindow::onError(QString* errorMsg)
   ui->errorMessage->setText(*errorMsg);
   exec();
   delete errorMsg;
-  emit error(QAbstractSocket::QAbstractSocket::ConnectionRefusedError);
+  emit error(QAbstractSocket::SocketError::ConnectionRefusedError);
 }
 
 ErrorWindow::~ErrorWindow()

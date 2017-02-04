@@ -16,9 +16,11 @@ Connector::Connector(const QString &new_ip) : QObject(0),
 int Connector::connectToServer (const QString &username)
 {
   socket.connectToHost(ip, service);
-  socket.waitForConnected(2000);
+  if (!socket.waitForConnected(2000))
+    return SERVER_NOT_FOUND;
   sendMessage(username);
   emit connectionEstablished();
+  return 0;
 }
 int Connector::sendMessage(const QString &msg)
 {
@@ -54,12 +56,27 @@ void Connector::setIp(const QString &new_ip)
   ip = new_ip;
 }
 
+QString Connector::errorToText(QAbstractSocket::SocketError error_)
+{
+   switch (error_)
+     {
+      case QAbstractSocket::SocketError::ConnectionRefusedError:
+       return QString("Connection refused: no server is running there or bad hostname.");
+     case QAbstractSocket::SocketError::RemoteHostClosedError:
+       return QString("Connection was closed by server.");
+     default:
+       return QString::number(error_);
+     }
+}
+
 void Connector::onError(QAbstractSocket::SocketError error_)
 {
   if (errorEmited)
     return;
   errorEmited = true;
-  emit error(error_);
+  QString *errorMsg = new QString;
+  *errorMsg = errorToText(error_);
+  emit error(errorMsg);
 }
 
 void Connector::onRead()
@@ -77,4 +94,5 @@ void Connector::onRead()
     }
   emit incomingMessage(decoded_msg);
 }
+
 

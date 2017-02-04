@@ -32,7 +32,12 @@ void MainWindow::connectToServer()
   ip = ui->connectEdit->text();
   connector.setIp(ip);
 
-  connector.connectToServer (ui->nickEdit->text());
+  if (connector.connectToServer (ui->nickEdit->text()))
+    {
+      toInitState();
+      return;
+    }
+      ;
 
   ui->connectButton->setDisabled(true);
 

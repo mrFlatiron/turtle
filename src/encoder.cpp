@@ -6,7 +6,9 @@ Encoder::Encoder()
 }
 int Encoder::encode(const QString &msg, char *data, const int dataSize, QString& errorMsg)
 {
-    const char *tempData = msg.toUtf8().constData();
+    QByteArray ba;
+    ba = msg.toUtf8();
+    const char *tempData = ba.constData();
     short length = strlen(tempData);
     if (dataSize < length + 3)
       {
@@ -37,5 +39,6 @@ int Encoder::decode(QString &msg, const char *data)
 
     data = data + 2;
     msg = msg.fromUtf8(data, length);
+    msg = msg.toHtmlEscaped();
     return is_error;
 }

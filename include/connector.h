@@ -39,6 +39,7 @@ public:
     void setIp(const QString& new_ip);
     int connectToServer(const QString& username);
     int sendMessage(const QString& msg);
+    QString errorToText(QAbstractSocket::SocketError error_);
 };
 
 #endif // CONNECTOR_H
