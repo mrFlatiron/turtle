@@ -71,10 +71,10 @@ void MainWindow::onError(QAbstractSocket::SocketError error_)
   toInitState();
 }
 
-void MainWindow::onError(QString *errorMsg)
-{
-  toInitState();
-}
+//void MainWindow::onError(QString *errorMsg)
+//{
+//  toInitState();
+//}
 
 void MainWindow::toInitState()
 {
