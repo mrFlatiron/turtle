@@ -37,7 +37,7 @@ void MainWindow::connectToServer()
       toInitState();
       return;
     }
-      ;
+
 
   ui->connectButton->setDisabled(true);
 

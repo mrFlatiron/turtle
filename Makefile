@@ -1133,66 +1133,7 @@ mainwindow.o: src/mainwindow.cpp include/mainwindow.h \
 		/opt/Qt/5.7/gcc_64/include/QtCore/QObject \
 		include/const.h \
 		include/encoder.h \
-		ui_mainwindow.h \
-		/opt/Qt/5.7/gcc_64/include/QtCore/QVariant \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QAction \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qaction.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QApplication \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
-		/opt/Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
-		/opt/Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qinputmethod.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QButtonGroup \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QHBoxLayout \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QHeaderView \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qheaderview.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qframe.h \
-		/opt/Qt/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
-		/opt/Qt/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qstyleoption.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qvalidator.h \
-		/opt/Qt/5.7/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qslider.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qabstractslider.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qtabbar.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qrubberband.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QLabel \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qlabel.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QLineEdit \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qlineedit.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qtextcursor.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qtextformat.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qpen.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qtextoption.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QMenuBar \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qmenubar.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qmenu.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QStatusBar \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qstatusbar.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QTextBrowser \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qtextbrowser.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qtextedit.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qtextdocument.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QToolBar \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qtoolbar.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QVBoxLayout \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QWidget
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o src/mainwindow.cpp
 
 connector.o: src/connector.cpp include/connector.h \
@@ -1371,58 +1312,7 @@ errorwindow.o: src/errorwindow.cpp include/errorwindow.h \
 		/opt/Qt/5.7/gcc_64/include/QtNetwork/QAbstractSocket \
 		/opt/Qt/5.7/gcc_64/include/QtNetwork/qabstractsocket.h \
 		include/const.h \
-		ui_errorwindow.h \
-		/opt/Qt/5.7/gcc_64/include/QtCore/QVariant \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QAction \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qaction.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qicon.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QApplication \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
-		/opt/Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
-		/opt/Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qinputmethod.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QButtonGroup \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QGridLayout \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QHeaderView \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qheaderview.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qframe.h \
-		/opt/Qt/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
-		/opt/Qt/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qstyleoption.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qvalidator.h \
-		/opt/Qt/5.7/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qslider.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qabstractslider.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qtabbar.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qrubberband.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QLabel \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qlabel.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QTextBrowser \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qtextbrowser.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/qtextedit.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qtextdocument.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qtextoption.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qtextcursor.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qtextformat.h \
-		/opt/Qt/5.7/gcc_64/include/QtGui/qpen.h \
-		/opt/Qt/5.7/gcc_64/include/QtWidgets/QWidget
+		ui_errorwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o errorwindow.o src/errorwindow.cpp
 
 encoder.o: src/encoder.cpp include/encoder.h \
